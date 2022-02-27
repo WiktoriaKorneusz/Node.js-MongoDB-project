@@ -1,0 +1,74 @@
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$pink: #d63384;
+$orange: #fd7e14;
+
+$primary: $pink;
+$secondary: $orange;
+
+.bg-grad {
+    background: linear-gradient(53deg, $pink 0%, orange 100%);
+}
+.carousel-item {
+    img {
+        filter: brightness(0.3) blur(2px);
+    }
+    .carousel-caption {
+        bottom: 50%;
+
+        transform: translateY(50%);
+    }
+}
+.movies-container {
+    margin: 4rem 0;
+}
+
+.movies {
+    margin-top: 3rem;
+}
+.movie-form {
+    justify-content: center;
+}
+.bootstrap-logo {
+    height: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+.tmdb-logo {
+    height: 0.75em;
+    margin-bottom: 0.25rem;
+}
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: $pink;
+}
+
+::selection {
+    color: white;
+    background: $pink;
+}
+.text-grad {
+    background: linear-gradient(53deg, $pink 0%, orange 100%);
+    background-size: 9rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    
+}
+// .movie{
+//     background-color: red !important;
+// }
+@import "../../node_modules/bootstrap/scss/bootstrap";
