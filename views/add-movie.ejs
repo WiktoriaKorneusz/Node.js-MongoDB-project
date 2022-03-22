@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("includes/head", {title: "Add movie"}) %>
+
+    </head>
+    <body class="bg-dark text-light">
+        <%- include("includes/nav") %> 
+
+        <main class="container movies-container text-center">
+            <h1 class="">Add movie</h1>
+            <h2>Haven't you found your favorite movie?</h2>
+            <p class="mb-5">
+                Don't worry you can simply add it by writing it's title below.
+                It's 100% free!
+            </p>
+            <form class="row g-3 text-center movie-form" method="POST" action="/movies">
+               
+                <div class="col-auto">
+                  <label for="title" class="visually-hidden">Title</label>
+                  <input type="text" class="form-control" id="title" name="title" required placeholder="Title" required>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3 bg-grad border-0">Add movie</button>
+                </div>
+              </form>
+        </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

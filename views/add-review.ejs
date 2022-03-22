@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("includes/head", {title: "WatchIt"}) %>
+
+    </head>
+    <body class="bg-dark text-light">
+        <%- include("includes/nav") %> 
+
+        <main class="container text-center mt-5">
+            <h1 class="">Add Review  </h1>
+
+            <form class="row g-3 text-center movie-form mt-3" method="post" action="/add-review">
+                
+                <div class="form-floating mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    />
+                    <label for="name" class="text-primary ms-2">Your name</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        id="title"
+                        placeholder="Title"
+                        required
+                    />
+                    <label for="title" class="text-primary ms-2">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input
+                        type="number"
+                        name="score"
+                        step="0.1"
+                        min="0"
+                        max="10"
+                        class="form-control"
+                        id="score"
+                        placeholder="Score"
+                        required
+                    />
+                    <label for="score" class="text-primary ms-2">Score</label>
+                </div>
+                <div class="form-floating">
+                    <textarea
+                        class="form-control"
+                        placeholder="Your review"
+                        id="review"
+                        name="review"
+                        style="height: 150px"
+                        required
+                    ></textarea>
+                    <label for="review" class="text-primary ms-2">Review</label>
+                </div>
+                <div class="col-12">
+                    <button
+                        type="submit"
+                        class="btn btn-primary bg-grad border-0"
+                    >
+                        <i class="bi bi-plus-lg"></i> Add review
+                    </button>
+                </div>
+                <input type="hidden" id="movieId" name="movieId" value="<%= movieId %>">
+            </form>
+        </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
