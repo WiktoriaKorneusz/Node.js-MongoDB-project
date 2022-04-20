@@ -2,16 +2,18 @@
 <html lang="en">
     <head>
         <%- include("includes/head", {title: "WatchIt"}) %>
-
     </head>
     <body class="bg-dark text-light">
-        <%- include("includes/nav") %> 
+        <%- include("includes/nav") %>
 
         <main class="container text-center mt-5">
-            <h1 class="">Add Review  </h1>
+            <h1 class="">Add Review</h1>
 
-            <form class="row g-3 text-center movie-form mt-3" method="post" action="/add-review">
-                
+            <form
+                class="row g-3 text-center movie-form mt-3"
+                method="post"
+                action="/add-review"
+            >
                 <div class="form-floating mb-3">
                     <input
                         type="text"
@@ -21,9 +23,11 @@
                         placeholder="Your name"
                         required
                     />
-                    <label for="name" class="text-primary ms-2">Your name</label>
+                    <label for="name" class="text-primary ms-2"
+                        >Your name</label
+                    >
                 </div>
-                
+
                 <div class="form-floating mb-3">
                     <input
                         type="text"
@@ -68,7 +72,12 @@
                         <i class="bi bi-plus-lg"></i> Add review
                     </button>
                 </div>
-                <input type="hidden" id="movieId" name="movieId" value="<%= movieId %>">
+                <input
+                    type="hidden"
+                    id="movieId"
+                    name="movieId"
+                    value="<%= movieId %>"
+                />
             </form>
         </main>
         <script

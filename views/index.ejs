@@ -4,7 +4,7 @@
         <%- include("includes/head", {title: "WatchIt"}) %>
     </head>
     <body class="bg-dark text-light">
-        <%- include("includes/nav") %> 
+        <%- include("includes/nav") %>
         <header>
             <div
                 id="carouselExampleFade"
@@ -19,8 +19,12 @@
                             alt="..."
                         />
                         <div class="carousel-caption d-none d-md-block">
-                            <h2 class="h1">Review your favorite movies and series</h2>
-                            <p class="h4">Share your thoughts about your favorite shows</p>
+                            <h2 class="h1">
+                                Review your favorite movies and series
+                            </h2>
+                            <p class="h4">
+                                Share your thoughts about your favorite shows
+                            </p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -31,7 +35,9 @@
                         />
                         <div class="carousel-caption d-none d-md-block">
                             <h2 class="h1">Find your next favorite show</h2>
-                            <p class="h4">Write and read other people's reviews</p>
+                            <p class="h4">
+                                Write and read other people's reviews
+                            </p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -81,9 +87,12 @@
                 <div
                     class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4"
                 >
-                <% for (const movie of movies.reverse()) { %> 
+                    <% for (const movie of movies.reverse()) { %>
                     <div class="col">
-                        <a href="/movies/<%= movie._id %> " class="text-light text-decoration-none">
+                        <a
+                            href="/movies/<%= movie._id %> "
+                            class="text-light text-decoration-none"
+                        >
                             <div class="card h-100 bg-dark">
                                 <img
                                     src="<%= movie.image %> "
@@ -91,25 +100,33 @@
                                     alt="<%= movie.title %>"
                                 />
                                 <div class="card-body">
-                                    <h5 class="card-title"><%= movie.title %> <span class="badge bg-primary"><%= movie.score %></span></h5>
+                                    <h5 class="card-title">
+                                        <%= movie.title %>
+                                        <span class="badge bg-primary"
+                                            ><%= movie.score %></span
+                                        >
+                                    </h5>
                                     <p class="card-text">
-                                        <% for (const genre of movie.genres) {%> 
-                                        <span class="badge bg-grad"><%= genre.charAt(0).toUpperCase() + genre.slice(1); %></span>
-                                        <% } %> 
+                                        <% for (const genre of movie.genres) {%>
+                                        <span class="badge bg-grad"
+                                            ><%= genre.charAt(0).toUpperCase() +
+                                            genre.slice(1); %></span
+                                        >
+                                        <% } %>
                                     </p>
-                                    <p class="card-text">
-                                        
-                                    </p>
-                                    
+                                    <p class="card-text"></p>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="card-text  text-center rounded py-1">Read more</p>
+                                    <p
+                                        class="card-text text-center rounded py-1"
+                                    >
+                                        Read more
+                                    </p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                 <% } %>    
-                    
+                    <% } %>
                 </div>
             </section>
         </main>

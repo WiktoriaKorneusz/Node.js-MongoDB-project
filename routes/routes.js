@@ -1,3 +1,4 @@
+// requires
 const express = require("express");
 const fetch = require("node-fetch");
 const router = express.Router();
@@ -6,22 +7,24 @@ const genres = require("../genres.js");
 const mongodb = require("mongodb");
 const ObjectId = mongodb.ObjectId;
 
-const url =
-    "https://api.themoviedb.org/3/search/movie?api_key=1f26ce4caed92b13586810585d483442&query=";
-
+// get routes
 router.get("/", async (req, res) => {
     const movies = await db.getDb().collection("movies").find().toArray();
     res.render("index", { movies: movies });
 });
+
 router.get("/add-movie", (req, res) => {
     res.render("add-movie");
 });
+
 router.get("/about", (req, res) => {
     res.render("about");
 });
+
 router.get("/add-review", (req, res) => {
     res.render("add-review");
 });
+
 router.get("/edit-review", (req, res) => {
     res.render("edit-review");
 });
@@ -66,6 +69,7 @@ router.post("/delete-review/:id", async (req, res) => {
     res.redirect("/");
 });
 
+// post routes
 router.post("/edit-review", async (req, res) => {
     const reviewId = new ObjectId(req.body.reviewId);
     const body = req.body.review;
@@ -91,16 +95,17 @@ router.post("/add-review", async (req, res) => {
 });
 
 router.post("/movies", async (req, res) => {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=`;
     const title = req.body.title;
 
     const response = await fetch(url + title);
     const data = await response.json();
     const list = data.results;
-
     const movie = list.find(
         (b) => b.title.toLowerCase() == title.toLowerCase()
     );
     let movieData;
+
     if (movie) {
         movieData = {
             title: movie.title,
@@ -122,6 +127,5 @@ router.post("/movies", async (req, res) => {
     res.redirect("/");
 });
 
-
-
+// Exports router
 module.exports = router;

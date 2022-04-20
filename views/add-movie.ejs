@@ -2,10 +2,9 @@
 <html lang="en">
     <head>
         <%- include("includes/head", {title: "Add movie"}) %>
-
     </head>
     <body class="bg-dark text-light">
-        <%- include("includes/nav") %> 
+        <%- include("includes/nav") %>
 
         <main class="container movies-container text-center">
             <h1 class="">Add movie</h1>
@@ -14,16 +13,32 @@
                 Don't worry you can simply add it by writing it's title below.
                 It's 100% free!
             </p>
-            <form class="row g-3 text-center movie-form" method="POST" action="/movies">
-               
+            <form
+                class="row g-3 text-center movie-form"
+                method="POST"
+                action="/movies"
+            >
                 <div class="col-auto">
-                  <label for="title" class="visually-hidden">Title</label>
-                  <input type="text" class="form-control" id="title" name="title" required placeholder="Title" required>
+                    <label for="title" class="visually-hidden">Title</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="title"
+                        name="title"
+                        required
+                        placeholder="Title"
+                        required
+                    />
                 </div>
                 <div class="col-auto">
-                  <button type="submit" class="btn btn-primary mb-3 bg-grad border-0">Add movie</button>
+                    <button
+                        type="submit"
+                        class="btn btn-primary mb-3 bg-grad border-0"
+                    >
+                        Add movie
+                    </button>
                 </div>
-              </form>
+            </form>
         </main>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

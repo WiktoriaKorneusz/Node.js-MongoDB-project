@@ -1,3 +1,4 @@
+// Creates a new database connection.
 const mongodb = require("mongodb");
 
 const MongoClient = mongodb.MongoClient;
@@ -15,6 +16,7 @@ const getDb = () => {
     return database;
 };
 
+// Exports module.
 module.exports = {
     connectDb: connect,
     getDb: getDb,
